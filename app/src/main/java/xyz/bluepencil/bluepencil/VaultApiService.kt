@@ -36,7 +36,7 @@ interface VaultApiService {
     @PUT
     @Headers("X-Vault-Request: true", "X-Vault-Token: hvs.czhNY0NBcRvM15O5Nme2m8Mz")
 
-    fun registerUser(@Url url: String, @Body data: Data): Call<Any>
+    fun registerUser(@Url url: String, @Body data: Data): Call<String>
 }
 
 /**

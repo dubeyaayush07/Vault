@@ -75,14 +75,14 @@ class HomeFragment : Fragment() {
             .baseUrl(BASE_URL)
             .build()
 
-            retrofit.create(VaultApiService::class.java).registerUser("accounts/$name", d).enqueue(object : Callback<Any> {
-            override fun onFailure(call: Call<Any>, t: Throwable) {
+            retrofit.create(VaultApiService::class.java).registerUser("accounts/$name", d).enqueue(object : Callback<String> {
+            override fun onFailure(call: Call<String>, t: Throwable) {
 
                 Toast.makeText(context, "Failure", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onResponse(call: Call<Any>, response: Response<Any>) {
-                Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                Toast.makeText(context, response.toString(), Toast.LENGTH_SHORT).show()
             }
         })
     }
