@@ -10,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.installations.Utils
+import com.squareup.moshi.Moshi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import xyz.bluepencil.bluepencil.*
 import xyz.bluepencil.bluepencil.databinding.FragmentHomeBinding
@@ -65,11 +67,12 @@ class HomeFragment : Fragment() {
         var d = Data()
         d.mnemonic = mne
 
-        val BASE_URL = "https://127.0.0.1:9200/v1/vault-ethereum/"
+
+
+        val BASE_URL = "https://9200-rishabhmali-mfaenablede-womg985qwtt.ws-eu47.gitpod.io/v1/vault-ethereum/"
         val retrofit = Retrofit.Builder()
-            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create())
             .baseUrl(BASE_URL)
-            .client(generateSecureOkHttpClient(requireContext()))
             .build()
 
             retrofit.create(VaultApiService::class.java).registerUser("accounts/$name", d).enqueue(object : Callback<Any> {
