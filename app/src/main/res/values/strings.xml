@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Vault</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Welcome to BluePencil</string>
+    <string name="sign_out">Sign out</string>
+    <string name="user_name">User Name</string>
+    <string name="price">Price</string>
+    <string name="home">Home</string>
+    <string name="inbox">Inbox</string>
+    <string name="jobs">Jobs</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="about">We feel that every photo and design demands human touch and creativity to give it a distinct and attractive look. We aim to work with you to create what you need. We connect the Professionals to the People in need, Hence eliminating the excessive search and provide a hassle free platform to both sides.</string>
+    <string name="more_info">More Info</string>
+</resources>
